@@ -1,0 +1,82 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <!-- Bootstrap CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <h1 class="mb-4">Registration</h1>
+
+        <form action="/save" method="post" th:object="${StudentEntity}" id="registrationForm" class="needs-validation" novalidate>
+
+            <div class="form-row">
+                <input type="hidden" th:field="*{id}">
+                
+                <div class="col-md-6 mb-3">
+                    <label for="studentname">Student Name:</label>
+                    <input type="text" id="studentname" name="studentname" th:field="*{studentname}" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="dob">Date Of Birth:</label>
+                    <input type="date" id="dob" name="dob" th:field="*{dob}" class="form-control" required>
+                    
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="email" name="email" th:field="*{email}" class="form-control" required>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="Number">PhoneNumber:</label>
+                    <input type="text" th:field="*{number}" class="form-control" required>
+                    
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="fatherName">Father Name:</label>
+                    <input type="text" id="fatherName" name="fatherName" th:field="*{fatherName}" class="form-control" required>
+                    
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="course">Course:</label>
+                    <input type="text" id="course" name="course" th:field="*{course}" class="form-control" required>
+                    
+                </div>
+            </div>
+
+            <button type="button" onclick="validateForm()" class="btn btn-primary">Register</button>
+        </form>
+
+        <hr>
+    </div>
+
+    
+   
+
+    <script>
+        function validateForm() {
+            var form = document.getElementById("registrationForm");
+
+            if (form.checkValidity()) {
+                form.submit();
+            } else {
+                alert("Please fill in all required fields and provide valid information.");
+            }
+        }
+    </script>
+
+</body>
+</html>

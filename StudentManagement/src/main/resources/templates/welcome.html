@@ -1,0 +1,51 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="mt-4">Students List</h2>
+
+        <div class="text-left mb-3">
+            <h3><a class="btn btn-primary" th:href="@{'/'}">Home</a></h3>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Date Of Birth</th>
+                    <th>E-mail</th>
+                    <th>Phone Number</th>
+                    <th>Father Name</th>
+                    <th>Course</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Iterate over the list of students and display each one -->
+                <tr th:each="StudentEntity : ${listStudent}">
+                    <td th:text="${StudentEntity.id}"></td>
+                    <td th:text="${StudentEntity.studentname}"></td>
+                    <td th:text="${StudentEntity.dob}"></td>
+                    <td th:text="${StudentEntity.email}"></td>
+                    <td th:text="${StudentEntity.number}"></td>
+                    <td th:text="${StudentEntity.fatherName}"></td>
+                    <td th:text="${StudentEntity.course}"></td>
+                    <td><a class="btn btn-warning" th:href="@{'/edit/' + ${StudentEntity.id}}">Edit</a></td>
+                    <td><a class="btn btn-danger" th:href="@{'/delete/' + ${StudentEntity.id}}" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

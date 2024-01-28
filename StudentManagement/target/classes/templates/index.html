@@ -1,0 +1,103 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-image: url('front.jpg');
+            background-size: cover;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: transparent;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .container {
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .btn-group {
+            margin-top: 20px;
+        }
+        .btn {
+            margin: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        .feature-card {
+            background-color: tr;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .cta-section {
+            width: 200px;
+            background-color: transparent;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .cta-heading {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        footer {
+            
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="container text-center">
+        <div class="feature-section">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="feature-icon fas fa-cogs"></i>
+                        <h4>Easy to Use</h4>
+                        <p>Our platform is designed to be user-friendly, making it easy for you to navigate and use.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+            <div class="cta-section">
+                <h2 class="cta-heading">Ready to get started?</h2>
+              <a th:href="@{'/addDetails'}" class="btn btn-primary btn-lg" style="color: yellow;">Register Now</a>
+            </div>
+
+           <div class="btn-group" role="group" aria-label="Basic mixed styles example" >
+              <a th:href="@{/welcome}" class="btn btn-warning btn-lg">Student List</a>
+              <a th:href="@{/about}" class="btn btn-success btn-lg">About Project</a>
+           </div>
+       
+    </div>
+
+    <footer>
+        <p >&copy; 2024 Student Management.</p>
+    </footer>
+
+    </body>
+</html>
